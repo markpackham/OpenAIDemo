@@ -19,11 +19,14 @@ const userInterface = readline.createInterface({
 
 userInterface.prompt();
 
-openai
-  .createChatCompletion({
-    model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: "Hello ChatGPT" }],
-  })
-  .then((res) => {
-    console.log(res.data.choices[0].message.content);
-  });
+// add listener, reacts to everytime Enter/Return key is hit so "line" is changed
+userInterface.on("line", async (input) => {
+  openai
+    .createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [{ role: "user", content: "Hello ChatGPT" }],
+    })
+    .then((res) => {
+      console.log(res.data.choices[0].message.content);
+    });
+});
