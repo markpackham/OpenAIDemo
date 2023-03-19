@@ -1,4 +1,4 @@
-Project requires a .env with a secret key purchased from the OpenAI API
+Project requires a .env with a secret key purchased from the OpenAI API, prices rise depending on usage
 
 API_KEY=
 
