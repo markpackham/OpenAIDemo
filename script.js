@@ -1,3 +1,6 @@
+// Code here can be intergrated into my own applications for my own AI needs
+// It's faster than using Open API's own website
+
 import { config } from "dotenv";
 config();
 
@@ -20,6 +23,7 @@ const userInterface = readline.createInterface({
 userInterface.prompt();
 
 // Add listener, reacts to everytime Enter/Return key is hit so "line" is changed
+// Prompt user for input, have ChatGPT promt the user again and loop through process forever
 userInterface.on("line", async (input) => {
   const res = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
@@ -27,7 +31,5 @@ userInterface.on("line", async (input) => {
   });
   console.log(res.data.choices[0].message.content);
 
-  // .then((res) => {
-  //   console.log(res.data.choices[0].message.content);
-  // });
+  userInterface.prompt();
 });
