@@ -15,5 +15,5 @@ openai
     messages: [{ role: "user", content: "Hello ChatGPT" }],
   })
   .then((res) => {
-    console.log(res.data.choices);
+    console.log(res.data.choices[0].message.content);
   });
