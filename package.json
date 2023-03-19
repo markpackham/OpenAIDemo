@@ -1,0 +1,17 @@
+{
+  "name": "openaidemo",
+  "version": "1.0.0",
+  "description": "Project requires a .env with a secret key purchased from the OpenAI API",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node script.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1"
+  }
+}
